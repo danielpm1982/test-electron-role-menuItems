@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, Tray } = require('electron')
+const { app, BrowserWindow, Menu, Tray, dialog } = require('electron')
 const path = require('path')
 
 let mainWindow
@@ -59,7 +59,7 @@ const menuItemConstructorOptionsArray = [
       {
         label: 'About',
         click: () => {
-          console.log('custom menuItem was clicked !')
+          dialog.showMessageBox(mainWindow, {type: "info", message: "Custom menuItem (not role menuItem) was clicked and responded !"})
         }
       }
     ]
